@@ -16,6 +16,7 @@ class ItemRecyclerViewAdapter(private val mlist: List<ItemModel>):RecyclerView.A
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val imageView: ImageView = this.itemView.findViewById(R.id.itemIcon)
         val textView: TextView = this.itemView.findViewById<TextView>(R.id.itemTitle)
+        val priceView: TextView = this.itemView.findViewById(R.id.itemPrice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,6 +34,6 @@ class ItemRecyclerViewAdapter(private val mlist: List<ItemModel>):RecyclerView.A
         val itemModel = mlist[position]
         holder.imageView.setImageResource(itemModel.image)
         holder.textView.text = itemModel.text
-
+        holder.priceView.text = itemModel.price
     }
 }
